@@ -30,7 +30,6 @@ namespace Lujinha.WF
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVendas));
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtProdutosOutros = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,11 +39,9 @@ namespace Lujinha.WF
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtOutroValorUnitario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listValorUnitario = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtOutrasQuantidadesPecas = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAdicionarProdutos = new System.Windows.Forms.Button();
@@ -69,18 +66,8 @@ namespace Lujinha.WF
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.labelValorTotal = new System.Windows.Forms.Label();
+            this.listResumoValorTotal = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(18)))), ((int)(((byte)(12)))));
-            this.label12.Location = new System.Drawing.Point(1, 209);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(19, 22);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "*";
             // 
             // label11
             // 
@@ -132,7 +119,7 @@ namespace Lujinha.WF
             this.listProduto.ItemHeight = 19;
             this.listProduto.Items.AddRange(new object[] {
             "Camiseta",
-            "Calça",
+            "Calca",
             "Bermuda",
             "Vestido",
             "Acessorio"});
@@ -140,6 +127,7 @@ namespace Lujinha.WF
             this.listProduto.Name = "listProduto";
             this.listProduto.Size = new System.Drawing.Size(120, 156);
             this.listProduto.TabIndex = 41;
+            this.listProduto.SelectedIndexChanged += new System.EventHandler(this.listProduto_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -178,17 +166,6 @@ namespace Lujinha.WF
             this.label2.Size = new System.Drawing.Size(112, 18);
             this.label2.TabIndex = 44;
             this.label2.Text = "Valor Unitario:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(18)))), ((int)(((byte)(12)))));
-            this.label4.Location = new System.Drawing.Point(259, 205);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 22);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "*";
             // 
             // txtOutroValorUnitario
             // 
@@ -232,17 +209,7 @@ namespace Lujinha.WF
             this.listValorUnitario.Name = "listValorUnitario";
             this.listValorUnitario.Size = new System.Drawing.Size(120, 156);
             this.listValorUnitario.TabIndex = 50;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(18)))), ((int)(((byte)(12)))));
-            this.label6.Location = new System.Drawing.Point(581, 150);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 22);
-            this.label6.TabIndex = 53;
-            this.label6.Text = "*";
+            this.listValorUnitario.SelectedIndexChanged += new System.EventHandler(this.listValorUnitario_SelectedIndexChanged);
             // 
             // txtOutrasQuantidadesPecas
             // 
@@ -286,6 +253,7 @@ namespace Lujinha.WF
             this.btnAdicionarProdutos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdicionarProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdicionarProdutos.UseVisualStyleBackColor = false;
+            this.btnAdicionarProdutos.Click += new System.EventHandler(this.btnAdicionarProdutos_Click);
             // 
             // btnLimparProdutos
             // 
@@ -308,6 +276,7 @@ namespace Lujinha.WF
             this.btnLimparProdutos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimparProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimparProdutos.UseVisualStyleBackColor = false;
+            this.btnLimparProdutos.Click += new System.EventHandler(this.btnLimparProdutos_Click);
             // 
             // label8
             // 
@@ -325,11 +294,9 @@ namespace Lujinha.WF
             this.listResumoPedido.Font = new System.Drawing.Font("Consolas", 12F);
             this.listResumoPedido.FormattingEnabled = true;
             this.listResumoPedido.ItemHeight = 19;
-            this.listResumoPedido.Items.AddRange(new object[] {
-            "Camiseta\t\t20 R$\t\t2\t\t40 R$"});
             this.listResumoPedido.Location = new System.Drawing.Point(24, 365);
             this.listResumoPedido.Name = "listResumoPedido";
-            this.listResumoPedido.Size = new System.Drawing.Size(748, 80);
+            this.listResumoPedido.Size = new System.Drawing.Size(429, 80);
             this.listResumoPedido.TabIndex = 57;
             // 
             // label9
@@ -381,7 +348,7 @@ namespace Lujinha.WF
             this.radioDebito.AutoSize = true;
             this.radioDebito.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioDebito.ForeColor = System.Drawing.Color.White;
-            this.radioDebito.Location = new System.Drawing.Point(229, 511);
+            this.radioDebito.Location = new System.Drawing.Point(223, 462);
             this.radioDebito.Name = "radioDebito";
             this.radioDebito.Size = new System.Drawing.Size(75, 22);
             this.radioDebito.TabIndex = 64;
@@ -394,7 +361,7 @@ namespace Lujinha.WF
             this.radioDinheiro.AutoSize = true;
             this.radioDinheiro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioDinheiro.ForeColor = System.Drawing.Color.White;
-            this.radioDinheiro.Location = new System.Drawing.Point(138, 510);
+            this.radioDinheiro.Location = new System.Drawing.Point(132, 461);
             this.radioDinheiro.Name = "radioDinheiro";
             this.radioDinheiro.Size = new System.Drawing.Size(88, 22);
             this.radioDinheiro.TabIndex = 63;
@@ -418,7 +385,7 @@ namespace Lujinha.WF
             this.radioCredito.AutoSize = true;
             this.radioCredito.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioCredito.ForeColor = System.Drawing.Color.White;
-            this.radioCredito.Location = new System.Drawing.Point(309, 513);
+            this.radioCredito.Location = new System.Drawing.Point(131, 511);
             this.radioCredito.Name = "radioCredito";
             this.radioCredito.Size = new System.Drawing.Size(81, 22);
             this.radioCredito.TabIndex = 66;
@@ -430,7 +397,7 @@ namespace Lujinha.WF
             // 
             this.txtOutrasFormasPagamento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtOutrasFormasPagamento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOutrasFormasPagamento.Location = new System.Drawing.Point(465, 513);
+            this.txtOutrasFormasPagamento.Location = new System.Drawing.Point(287, 511);
             this.txtOutrasFormasPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtOutrasFormasPagamento.Name = "txtOutrasFormasPagamento";
             this.txtOutrasFormasPagamento.Size = new System.Drawing.Size(97, 23);
@@ -441,7 +408,7 @@ namespace Lujinha.WF
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(396, 515);
+            this.label17.Location = new System.Drawing.Point(218, 513);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 18);
             this.label17.TabIndex = 67;
@@ -458,7 +425,7 @@ namespace Lujinha.WF
             this.btnCancelarCompra.ForeColor = System.Drawing.Color.White;
             this.btnCancelarCompra.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarCompra.Image")));
             this.btnCancelarCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarCompra.Location = new System.Drawing.Point(603, 509);
+            this.btnCancelarCompra.Location = new System.Drawing.Point(505, 507);
             this.btnCancelarCompra.Margin = new System.Windows.Forms.Padding(1);
             this.btnCancelarCompra.Name = "btnCancelarCompra";
             this.btnCancelarCompra.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
@@ -479,7 +446,7 @@ namespace Lujinha.WF
             this.btnSalvarCompra.ForeColor = System.Drawing.Color.White;
             this.btnSalvarCompra.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarCompra.Image")));
             this.btnSalvarCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarCompra.Location = new System.Drawing.Point(690, 509);
+            this.btnSalvarCompra.Location = new System.Drawing.Point(701, 508);
             this.btnSalvarCompra.Margin = new System.Windows.Forms.Padding(1);
             this.btnSalvarCompra.Name = "btnSalvarCompra";
             this.btnSalvarCompra.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
@@ -512,6 +479,7 @@ namespace Lujinha.WF
             this.listQuantidadeItens.Name = "listQuantidadeItens";
             this.listQuantidadeItens.Size = new System.Drawing.Size(84, 99);
             this.listQuantidadeItens.TabIndex = 73;
+            this.listQuantidadeItens.SelectedIndexChanged += new System.EventHandler(this.listQuantidadeItens_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -557,12 +525,23 @@ namespace Lujinha.WF
             this.labelValorTotal.TabIndex = 75;
             this.labelValorTotal.Text = "0,00 R$";
             // 
+            // listResumoValorTotal
+            // 
+            this.listResumoValorTotal.Font = new System.Drawing.Font("Consolas", 12F);
+            this.listResumoValorTotal.FormattingEnabled = true;
+            this.listResumoValorTotal.ItemHeight = 19;
+            this.listResumoValorTotal.Location = new System.Drawing.Point(499, 365);
+            this.listResumoValorTotal.Name = "listResumoValorTotal";
+            this.listResumoValorTotal.Size = new System.Drawing.Size(101, 80);
+            this.listResumoValorTotal.TabIndex = 76;
+            // 
             // FormVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.listResumoValorTotal);
             this.Controls.Add(this.labelValorTotal);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.listQuantidadeItens);
@@ -585,11 +564,9 @@ namespace Lujinha.WF
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnLimparProdutos);
             this.Controls.Add(this.btnAdicionarProdutos);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtOutrasQuantidadesPecas);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.listValorUnitario);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtOutroValorUnitario);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
@@ -597,7 +574,6 @@ namespace Lujinha.WF
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listProduto);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtProdutosOutros);
             this.Controls.Add(this.label3);
@@ -612,7 +588,6 @@ namespace Lujinha.WF
         }
 
         #endregion
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtProdutosOutros;
         private System.Windows.Forms.Label label3;
@@ -622,11 +597,9 @@ namespace Lujinha.WF
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtOutroValorUnitario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listValorUnitario;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtOutrasQuantidadesPecas;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnAdicionarProdutos;
@@ -651,5 +624,6 @@ namespace Lujinha.WF
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label labelValorTotal;
+        private System.Windows.Forms.ListBox listResumoValorTotal;
     }
 }
