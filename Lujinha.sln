@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apresentacao", "Apresentacao", "{0FDFCDAA-81E9-40C1-BAEF-B34652608654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lujinha.WF", "src\Lujinha.WF\Lujinha.WF.csproj", "{422A52D6-7BEB-448B-996E-7BBBABD2B96A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{422A52D6-7BEB-448B-996E-7BBBABD2B96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{422A52D6-7BEB-448B-996E-7BBBABD2B96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422A52D6-7BEB-448B-996E-7BBBABD2B96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{422A52D6-7BEB-448B-996E-7BBBABD2B96A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{422A52D6-7BEB-448B-996E-7BBBABD2B96A} = {0FDFCDAA-81E9-40C1-BAEF-B34652608654}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2EEBDF5-42A4-4328-9F5F-E076C3F72676}
+	EndGlobalSection
+EndGlobal
