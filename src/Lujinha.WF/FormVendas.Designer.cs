@@ -47,11 +47,6 @@ namespace Lujinha.WF
             this.btnAdicionarProdutos = new System.Windows.Forms.Button();
             this.btnLimparProdutos = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.listResumoPedido = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.radioDebito = new System.Windows.Forms.RadioButton();
             this.radioDinheiro = new System.Windows.Forms.RadioButton();
             this.label15 = new System.Windows.Forms.Label();
@@ -67,6 +62,13 @@ namespace Lujinha.WF
             this.label19 = new System.Windows.Forms.Label();
             this.labelValorTotal = new System.Windows.Forms.Label();
             this.listResumoValorTotal = new System.Windows.Forms.ListBox();
+            this.dataGridViewResumoPedido = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResumoPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -283,72 +285,18 @@ namespace Lujinha.WF
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(21, 323);
+            this.label8.Location = new System.Drawing.Point(26, 313);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(154, 18);
             this.label8.TabIndex = 56;
             this.label8.Text = "Resumo de Pedido: ";
-            // 
-            // listResumoPedido
-            // 
-            this.listResumoPedido.Font = new System.Drawing.Font("Consolas", 12F);
-            this.listResumoPedido.FormattingEnabled = true;
-            this.listResumoPedido.ItemHeight = 19;
-            this.listResumoPedido.Location = new System.Drawing.Point(24, 365);
-            this.listResumoPedido.Name = "listResumoPedido";
-            this.listResumoPedido.Size = new System.Drawing.Size(429, 80);
-            this.listResumoPedido.TabIndex = 57;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(36, 346);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 16);
-            this.label9.TabIndex = 58;
-            this.label9.Text = "Produto";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(227, 346);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 16);
-            this.label10.TabIndex = 59;
-            this.label10.Text = "Preço";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(336, 346);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(117, 16);
-            this.label13.TabIndex = 60;
-            this.label13.Text = "Quantidade Peças";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(531, 346);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(39, 16);
-            this.label14.TabIndex = 61;
-            this.label14.Text = "Valor";
             // 
             // radioDebito
             // 
             this.radioDebito.AutoSize = true;
             this.radioDebito.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioDebito.ForeColor = System.Drawing.Color.White;
-            this.radioDebito.Location = new System.Drawing.Point(223, 462);
+            this.radioDebito.Location = new System.Drawing.Point(221, 473);
             this.radioDebito.Name = "radioDebito";
             this.radioDebito.Size = new System.Drawing.Size(75, 22);
             this.radioDebito.TabIndex = 64;
@@ -361,7 +309,7 @@ namespace Lujinha.WF
             this.radioDinheiro.AutoSize = true;
             this.radioDinheiro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioDinheiro.ForeColor = System.Drawing.Color.White;
-            this.radioDinheiro.Location = new System.Drawing.Point(132, 461);
+            this.radioDinheiro.Location = new System.Drawing.Point(130, 472);
             this.radioDinheiro.Name = "radioDinheiro";
             this.radioDinheiro.Size = new System.Drawing.Size(88, 22);
             this.radioDinheiro.TabIndex = 63;
@@ -486,7 +434,7 @@ namespace Lujinha.WF
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(18)))), ((int)(((byte)(12)))));
-            this.label16.Location = new System.Drawing.Point(575, 23);
+            this.label16.Location = new System.Drawing.Point(582, 23);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(19, 22);
             this.label16.TabIndex = 72;
@@ -530,10 +478,56 @@ namespace Lujinha.WF
             this.listResumoValorTotal.Font = new System.Drawing.Font("Consolas", 12F);
             this.listResumoValorTotal.FormattingEnabled = true;
             this.listResumoValorTotal.ItemHeight = 19;
-            this.listResumoValorTotal.Location = new System.Drawing.Point(499, 365);
+            this.listResumoValorTotal.Location = new System.Drawing.Point(587, 355);
             this.listResumoValorTotal.Name = "listResumoValorTotal";
-            this.listResumoValorTotal.Size = new System.Drawing.Size(101, 80);
+            this.listResumoValorTotal.Size = new System.Drawing.Size(149, 80);
             this.listResumoValorTotal.TabIndex = 76;
+            // 
+            // dataGridViewResumoPedido
+            // 
+            this.dataGridViewResumoPedido.BackgroundColor = System.Drawing.Color.Silver;
+            this.dataGridViewResumoPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewResumoPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dataGridViewResumoPedido.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewResumoPedido.Location = new System.Drawing.Point(29, 344);
+            this.dataGridViewResumoPedido.Name = "dataGridViewResumoPedido";
+            this.dataGridViewResumoPedido.Size = new System.Drawing.Size(442, 122);
+            this.dataGridViewResumoPedido.TabIndex = 77;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(586, 323);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 18);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "Ultimas Vendas:";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Produto";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Preço";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Qtd Peças";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Valor";
+            this.Column4.Name = "Column4";
             // 
             // FormVendas
             // 
@@ -541,6 +535,8 @@ namespace Lujinha.WF
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dataGridViewResumoPedido);
             this.Controls.Add(this.listResumoValorTotal);
             this.Controls.Add(this.labelValorTotal);
             this.Controls.Add(this.label19);
@@ -556,11 +552,6 @@ namespace Lujinha.WF
             this.Controls.Add(this.radioDebito);
             this.Controls.Add(this.radioDinheiro);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.listResumoPedido);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnLimparProdutos);
             this.Controls.Add(this.btnAdicionarProdutos);
@@ -582,6 +573,7 @@ namespace Lujinha.WF
             this.Name = "FormVendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormVendas";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResumoPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -605,11 +597,6 @@ namespace Lujinha.WF
         private System.Windows.Forms.Button btnAdicionarProdutos;
         private System.Windows.Forms.Button btnLimparProdutos;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListBox listResumoPedido;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.RadioButton radioDebito;
         private System.Windows.Forms.RadioButton radioDinheiro;
         private System.Windows.Forms.Label label15;
@@ -625,5 +612,11 @@ namespace Lujinha.WF
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label labelValorTotal;
         private System.Windows.Forms.ListBox listResumoValorTotal;
+        private System.Windows.Forms.DataGridView dataGridViewResumoPedido;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

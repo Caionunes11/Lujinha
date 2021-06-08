@@ -15,12 +15,19 @@ namespace Lujinha.WF
         public TelaInicial()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
         }
 
         private void btnVendas_Click(object sender, EventArgs e)
         {
             FormVendas formVendas = new FormVendas();
             formVendas.Show();
+        }
+
+        private void btnSair1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
